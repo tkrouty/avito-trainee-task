@@ -12,4 +12,5 @@ conn = DBConnection()
 
 
 def get_db() -> AsyncIOMotorCollection:
+    """Returns a link to an object referring to the database."""
     return conn.client[DB_NAME]

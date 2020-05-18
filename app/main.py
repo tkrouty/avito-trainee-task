@@ -13,6 +13,9 @@ app.include_router(api.router)
 
 @app.on_event("startup")
 def connect_to_mongo():
+    """Creates an async Mongo client instance
+    and sets a TTL index if necessary.
+    """
     db.conn.client = AsyncIOMotorClient(MONGO_URL,
                                         minPoolSize=10,
                                         maxPoolSize=10)
@@ -22,4 +25,5 @@ def connect_to_mongo():
 
 @app.on_event("shutdown")
 def close_mongo_connection():
+    """Closes the Mongo Connection."""
     db.conn.client.close()

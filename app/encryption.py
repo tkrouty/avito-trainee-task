@@ -6,6 +6,10 @@ from .config import SECRET_KEY
 
 
 class Encryptor:
+    """Uses a fernet authentication suite to encrypt and decrypt
+    content of stored secrets.
+    """
+
     def __init__(self):
         self.cipher_suite = Fernet(SECRET_KEY)
 
@@ -17,6 +21,7 @@ class Encryptor:
 
 
 def hash_passphrase(passphrase: str) -> bytes:
+    """Hashes a passphrase."""
     byte_passphrase = passphrase.encode()
     hashed = hashlib.pbkdf2_hmac('sha256', byte_passphrase, SECRET_KEY, 100000)
 
