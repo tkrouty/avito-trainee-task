@@ -15,7 +15,7 @@ $ docker-compose up -d
 ## Running tests
 
 ```shell
-$ docker exec -it fastapi-container ./run_tests
+$ docker exec -it fastapi-container ./run_tests.sh
 ```
 
 ## Methods
