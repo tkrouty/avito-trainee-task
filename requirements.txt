@@ -1,6 +1,6 @@
 asgi-lifespan==1.0.0
 coverage==5.1
-cryptography==2.9.2
+cryptography==3.2
 fastapi==0.54.1
 flake8==3.8.0
 httpx==0.12.1
